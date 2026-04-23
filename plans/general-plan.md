@@ -73,6 +73,7 @@ PaceForge is a browser-based AI-assisted running training plan editor built with
 - Correct README tech stack claims to match reality
 - Add missing favicon asset
 - Consolidate duplicate configuration files
+- Remove outdated documentation file (docs/testing-guide.md)
 
 **Tech Stack**: Existing PaceForge stack (React 18, Vite 5, TypeScript 5, Husky v9, Vitest, ESLint, Prettier, npm-run-all)
 

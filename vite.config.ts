@@ -1,22 +1,20 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'node:path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { alias } from './path-alias.config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react({
-      jsxImportSource: 'react'
-    })
+      jsxImportSource: 'react',
+    }),
   ],
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+    alias,
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
   },
   build: {
     outDir: 'dist',
@@ -24,9 +22,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom']
-        }
-      }
-    }
-  }
-})
+          'react-vendor': ['react', 'react-dom'],
+        },
+      },
+    },
+  },
+});

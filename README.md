@@ -111,3 +111,4 @@ Follow conventional commits format: `type(scope): description`
 ## 🙏 Acknowledgments
 
 Built with modern web technologies and following best practices for browser-based applications.
+badly formatted

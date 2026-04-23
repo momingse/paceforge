@@ -47,3 +47,4 @@ build/
 # Misc
 .cache/
 .temp/
+.eslintcache

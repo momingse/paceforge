@@ -25,7 +25,7 @@ module.exports = {
       files: ['**/__tests__/**/*.{ts,tsx}', '**/*.{test,spec}.{ts,tsx}'],
       env: {
         node: true,
-        'vitest/globals': true,
+        jest: true,
       },
       rules: {
         '@typescript-eslint/no-explicit-any': 'warn',

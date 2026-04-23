@@ -247,8 +247,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Quality checks
-        run: npm run validate
+      - name: Type check
+        run: npm run type-check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format check
+        run: npm run format:check
 
       - name: Run tests
         run: npm run test:run
@@ -495,8 +501,18 @@ Expected: Build completes successfully
 
 - [ ] **Step 3: Verify linting passes**
 
-Run: `npm run validate`
-Expected: No linting, formatting, or type-checking errors
+Run: `npm run lint`
+Expected: No linting errors
+
+- [ ] **Step 4: Verify type checking passes**
+
+Run: `npm run type-check`
+Expected: No TypeScript errors
+
+- [ ] **Step 5: Verify formatting check passes**
+
+Run: `npm run format:check`
+Expected: No formatting issues
 
 - [ ] **Step 6: Create summary commit**
 

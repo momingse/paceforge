@@ -19,19 +19,16 @@ A validated plan must exist at `plans/YYYY-MM-DD-<feature-name>.md`.
 
 ## Step 1: Worktree Setup
 
-Create an isolated git worktree:
+Check if worktree already exists. The worktree should be located at `./worktrees/{feature-name}`:
 
 ```bash
-git worktree add .worktrees/{plan-name} -b feature/{plan-name}
+git worktree list
 ```
 
-Then commit the plan changes to the worktree (since `create-plan` may have created/modified the plan in master):
+If worktree does not exist, create an isolated git worktree:
 
 ```bash
-cd .worktrees/{plan-name}
-git add plans/
-git commit -m "plan: {plan-name}" || echo "No plan changes to commit"
-cd -
+git worktree add .worktrees/{feature-name} -b feature/{feature-name}
 ```
 
 All execution happens inside the worktree. Main branch remains clean throughout.
@@ -114,7 +111,7 @@ Commit documentation updates: `docs: archive plan for {feature-name}`.
 Switch back to main branch and remove the worktree:
 
 ```bash
-git worktree remove .worktrees/{plan-name}
+git worktree remove .worktrees/{feature-name}
 ```
 
 ---

@@ -6,10 +6,7 @@ import path from 'node:path'
 export default defineConfig({
   plugins: [
     react({
-      jsxImportSource: 'react',
-      babel: {
-        plugins: process.env.NODE_ENV === 'test' ? ['@babel/plugin-transform-runtime'] : []
-      }
+      jsxImportSource: 'react'
     })
   ],
   resolve: {

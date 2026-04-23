@@ -7,7 +7,7 @@ A browser-based AI-assisted running training plan editor that enables runners to
 ### Prerequisites
 
 - Node.js >= 18.0.0
-- npm >= 9.0.0
+- pnpm >= 8.0.0
 
 ### Installation
 
@@ -21,30 +21,30 @@ A browser-based AI-assisted running training plan editor that enables runners to
 2. Install dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. Start development server:
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 4. Open your browser and navigate to `http://localhost:3000`
 
 ## 🛠️ Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
-- `npm run type-check` - Run TypeScript type checking
-- `npm run test` - Run tests in watch mode
-- `npm run test:run` - Run tests once
-- `npm run test:coverage` - Generate coverage report
-- `npm run test:ui` - Run tests with UI
+- `pnpm run dev` - Start development server
+- `pnpm run build` - Build for production
+- `pnpm run preview` - Preview production build
+- `pnpm run lint` - Run ESLint
+- `pnpm run format` - Format code with Prettier
+- `pnpm run format:check` - Check code formatting
+- `pnpm run type-check` - Run TypeScript type checking
+- `pnpm run test` - Run tests in watch mode
+- `pnpm run test:run` - Run tests once
+- `pnpm run test:coverage` - Generate coverage report
+- `pnpm run test:ui` - Run tests with UI
 
 ## 🔄 CI/CD
 
@@ -53,7 +53,7 @@ PaceForge uses GitHub Actions for continuous integration:
 - **Automated Testing**: All tests run on pull requests and main branch pushes
 - **Code Quality**: ESLint, Prettier, and TypeScript checks on every commit
 - **Build Verification**: Ensures the application builds successfully
-- **Security Scanning**: npm audit for dependency vulnerabilities
+- **Security Scanning**: pnpm audit for dependency vulnerabilities
 
 ## 🏗️ Tech Stack
 

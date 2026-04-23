@@ -48,3 +48,6 @@ build/
 .cache/
 .temp/
 .eslintcache
+
+# worktree
+.worktrees/

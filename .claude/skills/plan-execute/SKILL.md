@@ -25,6 +25,15 @@ Create an isolated git worktree:
 git worktree add .worktrees/{plan-name} -b feature/{plan-name}
 ```
 
+Then commit the plan changes to the worktree (since `create-plan` may have created/modified the plan in master):
+
+```bash
+cd .worktrees/{plan-name}
+git add plans/
+git commit -m "plan: {plan-name}" || echo "No plan changes to commit"
+cd -
+```
+
 All execution happens inside the worktree. Main branch remains clean throughout.
 
 ---

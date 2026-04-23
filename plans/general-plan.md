@@ -9,12 +9,14 @@ PaceForge is a browser-based AI-assisted running training plan editor built with
 ## Current Plans
 
 ### 1. Project Initialization
+
 **Status**: ✅ Plan Created
 **Date**: 2026-04-22
 **Location**: `./plans/2026-04-22-project-initialization.md`
 **Description**: Initialize the PaceForge project with minimal dependencies, development tooling, git configuration, and pre-commit hooks for a browser-based AI-assisted running training plan editor.
 
 **Scope**:
+
 - Install minimal dependencies (React, Vite, TypeScript)
 - Set up ESLint and Prettier
 - Configure pre-commit hooks with Husky and lint-staged (including type-check)
@@ -30,11 +32,36 @@ PaceForge is a browser-based AI-assisted running training plan editor built with
 
 ---
 
+### 2. CI/CD Setup
+
+**Status**: ✅ Plan Created
+**Date**: 2026-04-23
+**Location**: `./plans/2026-04-23-ci-cd-setup.md`
+**Description**: Set up comprehensive continuous integration for PaceForge with automated testing, code quality checks, and build verification without deployment.
+
+**Scope**:
+
+- Install testing dependencies (Vitest, React Testing Library)
+- Create test configuration and utilities
+- Set up GitHub Actions workflows for CI and code quality
+- Add test coverage reporting
+- Integrate existing ESLint, Prettier, and TypeScript checks into CI
+- Add security scanning with npm audit
+- Create comprehensive testing documentation
+
+**Tech Stack**: GitHub Actions, Vitest, React Testing Library, ESLint, Prettier, TypeScript, Vite
+
+**Dependencies**: Project Initialization (must be completed first)
+
+**Next Steps**: Implement after project initialization is complete.
+
+---
+
 ## Plan Template
 
 When creating new plans, use this template:
 
-```markdown
+````markdown
 # [Feature Name] Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
@@ -64,6 +91,7 @@ When creating new plans, use this template:
 ```typescript
 [Complete test code]
 ```
+````
 
 - [ ] **Step 2: Run test to verify it fails**
 
@@ -91,6 +119,7 @@ git commit -m "feat: add feature description"
 ## Verification Checklist
 
 [List of verification steps]
+
 ```
 
 ---
@@ -105,3 +134,4 @@ This document should be updated whenever:
 
 **Last Updated**: 2026-04-22
 **Version**: 1.0.0
+```

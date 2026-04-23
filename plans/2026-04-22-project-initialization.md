@@ -274,9 +274,9 @@ git commit -m "chore: add TypeScript configuration files"
 - [ ] **Step 1: Write vite.config.ts**
 
 ```typescript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -284,18 +284,18 @@ export default defineConfig({
     react({
       jsxImportSource: 'react',
       babel: {
-        plugins: process.env.NODE_ENV === 'test' ? ['@babel/plugin-transform-runtime'] : []
-      }
-    })
+        plugins: process.env.NODE_ENV === 'test' ? ['@babel/plugin-transform-runtime'] : [],
+      },
+    }),
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+      '@': path.resolve(__dirname, './src'),
+    },
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
   },
   build: {
     outDir: 'dist',
@@ -303,12 +303,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom']
-        }
-      }
-    }
-  }
-})
+          'react-vendor': ['react', 'react-dom'],
+        },
+      },
+    },
+  },
+});
 ```
 
 - [ ] **Step 2: Verify Vite config syntax**
@@ -341,23 +341,23 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true }
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/no-unused-vars': ['error', {
-      argsIgnorePattern: '^_',
-      varsIgnorePattern: '^_'
-    }]
-  }
-}
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
+  },
+};
 ```
 
 - [ ] **Step 2: Write .eslintignore**
@@ -446,19 +446,10 @@ git commit -m "chore: add Prettier configuration"
 
 ```json
 {
-  "*.{ts,tsx}": [
-    "eslint --fix",
-    "prettier --write"
-  ],
-  "*.{css,scss}": [
-    "prettier --write"
-  ],
-  "*.{json,md}": [
-    "prettier --write"
-  ],
-  "*": [
-    "npm run type-check"
-  ]
+  "*.{ts,tsx}": ["eslint --fix", "prettier --write"],
+  "*.{css,scss}": ["prettier --write"],
+  "*.{json,md}": ["prettier --write"],
+  "*": ["npm run type-check"]
 }
 ```
 
@@ -535,56 +526,53 @@ git commit -m "chore: install project dependencies"
 ```javascript
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
     },
   },
   plugins: [],
-}
+};
 ```
 
 - [ ] **Step 2: Write postcss.config.js**
@@ -595,7 +583,7 @@ export default {
     tailwindcss: {},
     autoprefixer: {},
   },
-}
+};
 ```
 
 - [ ] **Step 3: Add Tailwind CSS dependencies**
@@ -837,11 +825,11 @@ Expected: No output (directory created successfully)
 - [ ] **Step 2: Write src/lib/utils.ts**
 
 ```typescript
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 ```
 
@@ -872,7 +860,7 @@ git commit -m "chore: add cn utility function for class merging"
 
 - [ ] **Step 1: Write README.md**
 
-```markdown
+````markdown
 # PaceForge
 
 A browser-based AI-assisted running training plan editor that enables runners to create, manage, and personalize their training plans with intelligent AI recommendations, running entirely in the browser with no backend server.
@@ -891,13 +879,16 @@ A browser-based AI-assisted running training plan editor that enables runners to
    git clone <repository-url>
    cd PaceForge
    ```
+````
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -964,14 +955,15 @@ Follow conventional commits format: `type(scope): description`
 ## 🙏 Acknowledgments
 
 Built with modern web technologies and following best practices for browser-based applications.
-```
+
+````
 
 - [ ] **Step 2: Commit**
 
 ```bash
 git add README.md
 git commit -m "docs: add README with getting started guide"
-```
+````
 
 ---
 
@@ -981,20 +973,10 @@ git commit -m "docs: add README with getting started guide"
 
 - Modify: `package.json` (verified via npm commands)
 
-- [ ] **Step 1: Verify TypeScript compilation**
+- [ ] **Step 1: Verify quality checks**
 
-Run: `npm run type-check`
-Expected: No TypeScript errors
-
-- [ ] **Step 2: Verify ESLint configuration**
-
-Run: `npm run lint`
-Expected: No ESLint errors
-
-- [ ] **Step 3: Verify Prettier formatting**
-
-Run: `npm run format:check`
-Expected: No formatting issues
+Run: `npm run validate`
+Expected: No linting, formatting, or type-checking errors
 
 - [ ] **Step 4: Start development server**
 
@@ -1056,9 +1038,7 @@ After completing all tasks, verify the following:
 
 - [ ] All configuration files are present and valid
 - [ ] Development server starts successfully (`npm run dev`)
-- [ ] TypeScript compilation passes (`npm run type-check`)
-- [ ] ESLint runs without errors (`npm run lint`)
-- [ ] Prettier formatting passes (`npm run format:check`)
+- [ ] All quality checks pass (`npm run validate`)
 - [ ] Production build succeeds (`npm run build`)
 - [ ] Pre-commit hooks are functional
 - [ ] Git ignore patterns are correct

@@ -84,6 +84,32 @@ PaceForge is a browser-based AI-assisted running training plan editor built with
 
 ---
 
+### 4. Migrate to pnpm
+
+**Status**: ✅ Complete
+**Date**: 2026-04-23
+**Location**: `./plans/completed/2026-04-23-migrate-to-pnpm.md`
+**Description**: Migrate the entire PaceForge project from npm to pnpm package manager, updating all configuration files, CI/CD workflows, and documentation.
+
+**Scope**:
+
+- Update package.json engines field from npm to pnpm
+- Update CI/CD workflows to use pnpm action and cache
+- Update .gitignore to exclude package-lock.json
+- Update all documentation to reference pnpm commands
+- Update Husky pre-commit hooks to use pnpm
+- Update README prerequisites and commands
+- Replace package-lock.json with pnpm-lock.yaml
+- Verify all npm scripts work with pnpm
+
+**Tech Stack**: pnpm (fast, disk space efficient package manager), existing PaceForge stack (React, Vite, TypeScript, etc.)
+
+**Dependencies**: Code Review Remediation (must be completed first)
+
+**Next Steps**: Continue with feature development using pnpm as the package manager.
+
+---
+
 ## Plan Template
 
 When creating new plans, use this template:

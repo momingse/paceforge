@@ -38,6 +38,21 @@ A browser-based AI-assisted running training plan editor that enables runners to
 - `npm run format` - Format code with Prettier
 - `npm run format:check` - Check code formatting
 - `npm run type-check` - Run TypeScript type checking
+- `npm run test` - Run tests in watch mode
+- `npm run test:run` - Run tests once
+- `npm run test:coverage` - Generate coverage report
+- `npm run test:ui` - Run tests with UI
+
+## 🔄 CI/CD
+
+PaceForge uses GitHub Actions for continuous integration:
+
+- **Automated Testing**: All tests run on pull requests and main branch pushes
+- **Code Quality**: ESLint, Prettier, and TypeScript checks on every commit
+- **Build Verification**: Ensures the application builds successfully
+- **Security Scanning**: npm audit for dependency vulnerabilities
+
+See [docs/testing-guide.md](docs/testing-guide.md) for detailed testing information.
 
 ## 🏗️ Tech Stack
 

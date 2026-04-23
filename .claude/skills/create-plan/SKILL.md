@@ -1,8 +1,7 @@
 ---
 name: create-plan
-description: Create an implementation plan. Use when being asked to write an implementation plan.
+description: Create an implementation plan. Use when being asked to write plans.
 ---
-
 
 ## Instructions
 
@@ -12,7 +11,7 @@ You are to write a comprehensive implementation plan for the feature specified. 
 
 ## Context
 
-This should be run in a dedicated worktree (created by brainstorming skill).
+This should be run in a dedicated worktree (in `./worktrees/{feature-name}`).
 
 ## Plan Location
 

@@ -1,5 +1,6 @@
 {
   "name": "paceforge",
+  "private": true,
   "version": "0.1.0",
   "description": "Browser-based AI-assisted running training plan editor",
   "type": "module",

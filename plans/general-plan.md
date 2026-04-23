@@ -34,7 +34,7 @@ PaceForge is a browser-based AI-assisted running training plan editor built with
 
 ### 2. CI/CD Setup
 
-**Status**: ✅ Plan Created
+**Status**: ✅ Complete
 **Date**: 2026-04-23
 **Location**: `./plans/2026-04-23-ci-cd-setup.md`
 **Description**: Set up comprehensive continuous integration for PaceForge with automated testing, code quality checks, and build verification without deployment.
@@ -54,6 +54,31 @@ PaceForge is a browser-based AI-assisted running training plan editor built with
 **Dependencies**: Project Initialization (must be completed first)
 
 **Next Steps**: Implement after project initialization is complete.
+
+---
+
+### 3. Code Review Remediation
+
+**Status**: 🔄 In Progress
+**Date**: 2026-04-23
+**Location**: `./plans/2026-04-23-code-review-remediation.md`
+**Description**: Fix all issues identified in comprehensive code review of project initialization and CI/CD setup, including critical pre-commit hook issues, test improvements, documentation fixes, and security tracking.
+
+**Scope**:
+
+- Fix critical pre-commit hook that was silently swallowing errors
+- Update pre-commit hook to use Husky v9 format and npm-run-all
+- Update App test to actually test the App component
+- Fix ESLint config to use Vitest instead of Jest
+- Correct README tech stack claims to match reality
+- Add missing favicon asset
+- Consolidate duplicate configuration files
+
+**Tech Stack**: Existing PaceForge stack (React 18, Vite 5, TypeScript 5, Husky v9, Vitest, ESLint, Prettier, npm-run-all)
+
+**Dependencies**: Project Initialization and CI/CD Setup (both must be completed first)
+
+**Next Steps**: Implement immediately to address critical pre-commit hook and testing issues.
 
 ---
 

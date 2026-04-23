@@ -691,7 +691,126 @@ git commit -m "docs: remove outdated testing-guide.md"
 
 ---
 
-### Task 10: Final Verification
+### Task 10: Update Plans to Use npm-run-all Validation
+
+**Files:**
+
+- Modify: `plans/2026-04-22-project-initialization.md`
+- Modify: `plans/2026-04-23-ci-cd-setup.md`
+
+- [ ] **Step 1: Identify validation commands in existing plans**
+
+```bash
+# Find all instances where individual validation commands are used in plans
+grep -n "npm run lint\|npm run format:check\|npm run type-check" plans/*.md
+```
+
+Expected: Multiple matches found across project initialization and CI/CD setup plans.
+
+- [ ] **Step 2: Update project-initialization plan validation steps**
+
+Find and replace individual validation commands with `npm run validate`:
+
+In `plans/2026-04-22-project-initialization.md`, replace sequences like:
+
+```markdown
+Run: `npm run lint`
+Run: `npm run type-check`
+Run: `npm run format:check`
+```
+
+With:
+
+```markdown
+Run: `npm run validate`
+```
+
+Or for final verification sections where multiple checks are listed:
+
+```markdown
+- [ ] TypeScript compilation passes (`npm run type-check`)
+- [ ] ESLint runs without errors (`npm run lint`)
+- [ ] Prettier formatting passes (`npm run format:check`)
+```
+
+Replace with:
+
+```markdown
+- [ ] All quality checks pass (`npm run validate`)
+```
+
+- [ ] **Step 3: Update CI/CD setup plan validation steps**
+
+In `plans/2026-04-23-ci-cd-setup.md`, update verification steps:
+
+Replace:
+
+```bash
+npm run lint
+npm run format:check
+npm run type-check
+```
+
+With:
+
+```bash
+npm run validate
+```
+
+- [ ] **Step 4: Update CI workflow to use validate command**
+
+Update `.github/workflows/ci.yml` to use the new validate script:
+
+Replace individual steps:
+
+```yaml
+- name: Type check
+  run: npm run type-check
+
+- name: Lint
+  run: npm run lint
+
+- name: Format check
+  run: npm run format:check
+```
+
+With single validation step:
+
+```yaml
+- name: Quality checks
+  run: npm run validate
+```
+
+- [ ] **Step 5: Verify changes are consistent**
+
+```bash
+# Check that validate command is defined in package.json
+grep -A 2 '"validate"' package.json
+
+# Verify plans no longer have individual validation commands (except in examples)
+grep -n "npm run lint\|npm run format:check\|npm run type-check" plans/*.md
+```
+
+Expected: Only examples showing individual commands remain; actual verification steps use `npm run validate`.
+
+- [ ] **Step 6: Test validate command**
+
+```bash
+npm run validate
+```
+
+Expected: All checks (lint, format:check, type-check) pass successfully.
+
+- [ ] **Step 7: Commit**
+
+```bash
+git add plans/*.md .github/workflows/ci.yml
+git commit -m "docs: update plans and CI to use npm-run-all validation command"
+```
+
+---
+
+### Task 11: Final Verification
 
 **Files:**
 
@@ -827,6 +946,6 @@ After completing all tasks, verify the following:
 ---
 
 **Plan Created**: 2026-04-23
-**Total Tasks**: 10
+**Total Tasks**: 11
 **Estimated Completion Time**: 2-3 hours
 **Priority**: HIGH (Fixes critical pre-commit hook and testing issues)

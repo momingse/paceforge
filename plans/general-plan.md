@@ -62,7 +62,7 @@ PaceForge is a browser-based AI-assisted running training plan editor built with
 **Status**: 🔄 In Progress
 **Date**: 2026-04-23
 **Location**: `./plans/2026-04-23-code-review-remediation.md`
-**Description**: Fix all issues identified in comprehensive code review of project initialization and CI/CD setup, including critical pre-commit hook issues, test improvements, documentation fixes, and security tracking.
+**Description**: Fix all issues identified in comprehensive code review of project initialization and CI/CD setup, including critical pre-commit hook issues, test improvements, documentation fixes, updating existing plans to use npm-run-all validation, and security tracking.
 
 **Scope**:
 
@@ -74,6 +74,7 @@ PaceForge is a browser-based AI-assisted running training plan editor built with
 - Add missing favicon asset
 - Consolidate duplicate configuration files
 - Remove outdated documentation file (docs/testing-guide.md)
+- Update existing plans and CI to use npm-run-all validation
 
 **Tech Stack**: Existing PaceForge stack (React 18, Vite 5, TypeScript 5, Husky v9, Vitest, ESLint, Prettier, npm-run-all)
 

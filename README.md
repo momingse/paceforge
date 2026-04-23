@@ -12,17 +12,20 @@ A browser-based AI-assisted running training plan editor that enables runners to
 ### Installation
 
 1. Clone repository:
+
    ```bash
    git clone <repository-url>
    cd PaceForge
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start development server:
+
    ```bash
    npm run dev
    ```
@@ -52,16 +55,20 @@ PaceForge uses GitHub Actions for continuous integration:
 - **Build Verification**: Ensures the application builds successfully
 - **Security Scanning**: npm audit for dependency vulnerabilities
 
-See [docs/testing-guide.md](docs/testing-guide.md) for detailed testing information.
-
 ## 🏗️ Tech Stack
 
 - **Frontend**: React 18 + Vite + TypeScript
-- **Styling**: Tailwind CSS + shadcn/ui
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+
+## 📋 Planned Features
+
+The following technologies are planned for future implementation:
+
+- **UI Components**: shadcn/ui
 - **State Management**: Zustand + React Query
 - **Forms**: React Hook Form + Zod
 - **AI Integration**: AI SDK (@ai-sdk/google)
-- **Build Tool**: Vite
 
 ## 📁 Project Structure
 

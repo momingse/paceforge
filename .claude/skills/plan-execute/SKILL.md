@@ -19,7 +19,7 @@ A validated plan must exist at `plans/YYYY-MM-DD-<feature-name>.md`.
 
 ## Step 1: Worktree Setup
 
-Create worktree or switch to existing worktree: see `use-git-worktree`
+Create worktree or switch to existing worktree. Use skill `use-git-worktree`
 
 ---
 

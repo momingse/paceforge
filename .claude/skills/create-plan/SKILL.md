@@ -11,7 +11,7 @@ You are to write a comprehensive implementation plan for the feature specified. 
 
 ## Context
 
-Before writing the plan, make sure the context is clear. This should be written in a dedicated worktree. See: `use-git-worktree`
+Before writing the plan, make sure the context is clear. This should be written in a dedicated worktree. Use skill `use-git-worktree`
 
 ## Plan Location
 

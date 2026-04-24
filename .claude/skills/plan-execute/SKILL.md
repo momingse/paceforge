@@ -19,19 +19,7 @@ A validated plan must exist at `plans/YYYY-MM-DD-<feature-name>.md`.
 
 ## Step 1: Worktree Setup
 
-Check if worktree already exists. The worktree should be located at `./worktrees/{feature-name}`:
-
-```bash
-git worktree list
-```
-
-If worktree does not exist, create an isolated git worktree:
-
-```bash
-git worktree add .worktrees/{feature-name} -b feature/{feature-name}
-```
-
-All execution happens inside the worktree. Main branch remains clean throughout.
+Create worktree or switch to existing worktree: see `use-git-worktree`
 
 ---
 

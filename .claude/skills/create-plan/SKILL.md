@@ -11,7 +11,7 @@ You are to write a comprehensive implementation plan for the feature specified. 
 
 ## Context
 
-This should be run in a dedicated worktree (in `./worktrees/{feature-name}`).
+This should be written in a dedicated worktree in `./worktrees/{feature-name}`.
 
 ## Plan Location
 
@@ -72,7 +72,7 @@ Every plan MUST start with this header:
 ```markdown
 # [Feature Name] Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use plan-execute to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** [One sentence describing what this builds]
 

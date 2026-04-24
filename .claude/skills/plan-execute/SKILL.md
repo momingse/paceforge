@@ -88,7 +88,7 @@ If all pass: proceed to smoke test.
 
 _In the worktree, before push:_
 
-**Plan Archival**: move `plans/YYYY-MM-DD-<feature-name>.md` to `plans/completed/YYYY-MM-DD-<feature-name>.md`. Update `plans/general-plan.md`
+**Plan Archival**: move `plans/YYYY-MM-DD-<feature-name>.md` to `plans/completed/YYYY-MM-DD-<feature-name>.md`.
 
 Commit documentation updates: `docs: archive plan for {feature-name}`.
 

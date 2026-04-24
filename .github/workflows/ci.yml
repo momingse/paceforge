@@ -5,6 +5,9 @@ on:
     branches: [master, main]
   push:
     branches: [master, main]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
 
 jobs:
   test:
@@ -12,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [20.x]
 
     steps:
       - name: Checkout code
@@ -43,7 +46,6 @@ jobs:
 
       - name: Upload coverage reports
         uses: codecov/codecov-action@v4
-        if: matrix.node-version == '20.x'
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage/coverage-final.json

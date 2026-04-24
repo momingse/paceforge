@@ -4,4 +4,6 @@ A browser-based AI-assisted running training plan editor that enables runners to
 
 ## Documentation
 
+You should read all the documentation in the [docs](./docs) directory before getting started.
+
 See `docs/architecture.md` for the full technical architecture and tech stack details.

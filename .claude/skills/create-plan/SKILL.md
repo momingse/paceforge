@@ -11,15 +11,13 @@ You are to write a comprehensive implementation plan for the feature specified. 
 
 ## Context
 
-This should be written in a dedicated worktree. See: `use-git-worktree`
+Before writing the plan, make sure the context is clear. This should be written in a dedicated worktree. See: `use-git-worktree`
 
 ## Plan Location
 
 Save the plan to: `./plans/YYYY-MM-DD-<feature-name>.md`
 
 (Where YYYY-MM-DD is today's date and <feature-name> is provided by the user)
-
-Then update the general plan at `./plans/general-plan.md` to record this new task as a route.
 
 ## Approach
 
@@ -164,5 +162,4 @@ If you find issues, fix them inline. No need to re-review — just fix and move 
 After completing the plan:
 
 1. Save the plan to `./plans/YYYY-MM-DD-<feature-name>.md`
-2. Update `./plans/general-plan.md` to record this new task as a route with its plan location
-3. Report back to the user with the plan location and a brief summary
+2. Report back to the user with the plan location and a brief summary

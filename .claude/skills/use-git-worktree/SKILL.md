@@ -11,7 +11,7 @@ Core principle: Systematic directory selection + safety verification = reliable 
 
 Announce at start: "I'm using the using-git-worktrees skill to set up an isolated workspace."
 
-All worktrees should be created at `./worktrees/{feature-name}`
+All worktrees should be created at `.worktrees/{feature-name}`
 
 ## Step 1: Check Existing Directories
 

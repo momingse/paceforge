@@ -11,7 +11,7 @@ You are to write a comprehensive implementation plan for the feature specified. 
 
 ## Context
 
-This should be written in a dedicated worktree in `./worktrees/{feature-name}`.
+This should be written in a dedicated worktree. See: `use-git-worktree`
 
 ## Plan Location
 

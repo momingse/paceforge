@@ -17,7 +17,7 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "validate": "npm-run-all lint format:check type-check",
+    "validate": "npm-run-all lint format:check type-check test:run",
     "validate:fix": "npm-run-all lint format type-check"
   },
   "dependencies": {

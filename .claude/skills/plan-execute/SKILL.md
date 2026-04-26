@@ -13,13 +13,28 @@ Run `/clear` before this command.
 
 ## Prerequisite
 
-A validated plan must exist at `plans/YYYY-MM-DD-<feature-name>.md`.
+A validated plan must exist at `.worktrees/<feature-name>/plans/YYYY-MM-DD-<feature-name>.md`.
 
 ---
 
 ## Step 1: Worktree Setup
 
 Create worktree or switch to existing worktree. Use skill `use-git-worktree`
+
+---
+
+## Step 1.5: Plan Commit Check
+
+After switching to the worktree, check if the plan file has been committed yet:
+
+1. Locate the plan file: `.worktrees/<feature-name>/plans/YYYY-MM-DD-<feature-name>.md`
+2. Check if the plan file is staged or committed using `git status` and `git log`
+3. If the plan file is uncommitted (appears in git status as new/modified):
+   - Stage the plan file: `git add plans/YYYY-MM-DD-<feature-name>.md`
+   - Commit with message: `docs: initial plan commit for {feature-name}`
+4. If the plan file is already committed, skip this step
+
+This ensures the plan is preserved in the worktree's git history before implementation begins.
 
 ---
 

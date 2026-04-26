@@ -26,3 +26,11 @@ If we cannot find the worktree directory, create it:
 ```bash
 git worktree add .worktrees/{feature-name} -b feature/{feature-name}
 ```
+
+## Step 3: Setup Worktree
+
+We need to install dependencies in the worktree:
+
+```bash
+cd .worktrees/{feature-name} && pnpm install
+```

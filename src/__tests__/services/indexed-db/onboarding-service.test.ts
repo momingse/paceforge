@@ -9,6 +9,7 @@ import {
   deleteProfile,
 } from '@/services/indexed-db/onboarding-service';
 import { db } from '@/services/indexed-db/dexie-client';
+import { basicsSchema } from '@/services/validation/onboarding-validation';
 
 describe('onboarding-service', () => {
   beforeEach(async () => {
@@ -32,6 +33,12 @@ describe('onboarding-service', () => {
 
       expect(stored).toBeDefined();
       expect(stored!.id).toBe(profile.id);
+    });
+
+    it('creates a profile with valid defaults that pass basics validation', async () => {
+      const profile = await createProfile();
+      const result = basicsSchema.safeParse(profile.basics);
+      expect(result.success).toBe(true);
     });
   });
 

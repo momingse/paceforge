@@ -35,6 +35,14 @@ export async function getProfile(id: string): Promise<RunnerProfile | undefined>
   return db.runnerProfiles.get(id);
 }
 
+/**
+ * Update top-level fields on a profile.
+ *
+ * NOTE: Dexie's `update()` performs a shallow top-level merge.
+ * Nested objects (e.g. `basics`, `lifestyleConstraints`) are replaced
+ * wholesale, not deep-merged. Callers must always pass the complete
+ * nested object for any section they want to update.
+ */
 export async function updateProfile(id: string, data: Partial<RunnerProfile>): Promise<void> {
   await db.runnerProfiles.update(id, {
     ...data,

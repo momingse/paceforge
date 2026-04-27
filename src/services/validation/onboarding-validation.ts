@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const DAY_OF_WEEK = [
+export const DAY_OF_WEEK = [
   'Monday',
   'Tuesday',
   'Wednesday',
@@ -9,6 +9,8 @@ const DAY_OF_WEEK = [
   'Saturday',
   'Sunday',
 ] as const;
+
+export type DayOfWeek = (typeof DAY_OF_WEEK)[number];
 
 export const basicsSchema = z.object({
   age: z
@@ -42,6 +44,10 @@ export const basicsSchema = z.object({
   experienceLevel: z.enum(['new', 'intermediate', 'advanced']),
 });
 
+export type Basics = z.infer<typeof basicsSchema>;
+export type Sex = Basics['sex'];
+export type ExperienceLevel = Basics['experienceLevel'];
+
 export const currentFitnessSchema = z.object({
   weeklyMileage: z
     .number()
@@ -53,6 +59,8 @@ export const currentFitnessSchema = z.object({
     .max(26.2, 'Longest recent run must be 26.2 miles or less'),
 });
 
+export type CurrentFitness = z.infer<typeof currentFitnessSchema>;
+
 const timePattern = /^(?:([0-1]?[0-9]|2[0-3]):)?([0-5]?[0-9]):([0-5][0-9])$/;
 
 export const personalBestSchema = z.object({
@@ -60,6 +68,9 @@ export const personalBestSchema = z.object({
   time: z.string().regex(timePattern, 'Time must be in HH:MM:SS or MM:SS format').optional(),
   date: z.string().optional(),
 });
+
+export type PersonalBest = z.infer<typeof personalBestSchema>;
+export type PBDistance = PersonalBest['distance'];
 
 export const daysAvailableSchema = z.discriminatedUnion('type', [
   z.object({
@@ -76,8 +87,12 @@ export const daysAvailableSchema = z.discriminatedUnion('type', [
   }),
 ]);
 
+export type DaysAvailable = z.infer<typeof daysAvailableSchema>;
+
 export const lifestyleConstraintsSchema = z.object({
   daysAvailable: daysAvailableSchema,
   preferredLongRunDay: z.enum(DAY_OF_WEEK).optional(),
   crossTraining: z.boolean(),
 });
+
+export type LifestyleConstraints = z.infer<typeof lifestyleConstraintsSchema>;

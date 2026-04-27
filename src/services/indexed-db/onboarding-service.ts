@@ -13,7 +13,7 @@ export async function createProfile(): Promise<RunnerProfile> {
     createdAt: now,
     updatedAt: now,
     basics: {
-      age: 0,
+      age: 1,
       sex: 'prefer-not-to-say',
       experienceLevel: 'new',
     },

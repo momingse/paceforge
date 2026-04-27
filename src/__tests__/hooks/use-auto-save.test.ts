@@ -101,4 +101,19 @@ describe('useAutoSave', () => {
 
     vi.advanceTimersByTime(500);
   });
+
+  it('handles save errors gracefully without crashing', () => {
+    vi.mocked(service.updateProfile).mockRejectedValueOnce(new Error('DB error'));
+
+    useOnboardingStore.setState({
+      profileId: 'test-id',
+      profile: { basics: { age: 30, sex: 'male', experienceLevel: 'new' } },
+    });
+
+    const { result } = renderHook(() => useAutoSave());
+    vi.advanceTimersByTime(500);
+
+    expect(service.updateProfile).toHaveBeenCalled();
+    expect(result.current.isSaving).toBe(false);
+  });
 });

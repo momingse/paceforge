@@ -11,3 +11,4 @@ A browser-based AI-assisted running training plan editor that enables runners to
 You should read all the documentation in the [docs](./docs) directory before getting started.
 
 See `docs/architecture.md` for the full technical architecture and tech stack details.
+See `.claude/LEARN.md` for a list of reminders that you should keep in mind.

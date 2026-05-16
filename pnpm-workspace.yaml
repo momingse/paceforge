@@ -1,0 +1,8 @@
+# pnpm workspace configuration
+packages:
+  - '.'
+
+# Security settings
+minimumReleaseAge: 7 days
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 43200  # minutes (30 days)

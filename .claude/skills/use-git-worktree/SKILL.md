@@ -31,6 +31,20 @@ git worktree add .worktrees/{feature-name} -b feature/{feature-name}
 
 We need to install dependencies in the worktree:
 
+1. Check if you are in the worktree directory:
+
+```bash
+pwd
+```
+
+2.1 If not, change to the worktree directory:
+
 ```bash
 cd .worktrees/{feature-name} && pnpm install
+```
+
+2.2 If already in the worktree directory, install dependencies:
+
+```bash
+pnpm install
 ```
